@@ -4,9 +4,7 @@ from time import time
 
 
 
-class Base():
-    
-    
+class Base():  
     def summary(self):
         try:
             print(type(self).__name__,self.res.shape)
@@ -64,9 +62,7 @@ class Dense(Base):
          self.prev.back_prop()
          
          
-class Conv2D(Base):
-    
-    
+class Conv2D(Base):  
     def __init__(self,n,kernel = (2,2),strides=(1,1)):
         self.n = n
         self.strip = strides
