@@ -9,11 +9,15 @@ from optimizers import Adam
 class Sequential():
     def __init__(self):
         self.layers = []
+        
+        
     def accuracy(self,p,y):
         P = np.round(p)
         P = np.sum((y - P)**2,axis = 1)
         P =len(y)- len(np.where(P>0)[0])
         return P/len(y)
+    
+    
     def get_loss_and_accuracy(self,vX,vY):
         size = 1000
         replace = False
@@ -29,6 +33,8 @@ class Sequential():
         vl = round(vl,5)
         va = round(va,4)
         return vl,va
+    
+    
     def add(self,l):
         try:
             i = self.layers
@@ -38,18 +44,18 @@ class Sequential():
             except:
                 l.prev = i
                 l.initialize()
-                i.next = l
-                
+                i.next = l       
         except:
             self.layers = l
-            self.input = l
-            
+            self.input = l            
         self.output = l
         l.is_output = 1
         try:
             l.prev.is_output = 0
         except:
             pass
+        
+        
     def fit(self,X,Y,batch_size = 64,epochs = 1,validation_data = None,verbose = 1):#
         for epoch in range(epochs):
             #print('epoch : ',epoch)
@@ -80,9 +86,13 @@ class Sequential():
                         print()
                 except:
                     print()
+                    
+                    
     def predict(self,INPUT):
             self.input.predict(INPUT)
             return self.output.res
+        
+        
     def compile(self,loss,optimizer = Adam()):
         self.loss = loss
         self.output.next = loss
