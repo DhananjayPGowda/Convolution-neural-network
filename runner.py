@@ -19,7 +19,7 @@ X = np.reshape(X,(len(X),1,28,28))
 x = np.reshape(x,(len(x),1,28,28))
 
 
-nn = NN()
+nn = Sequential()
 nn.add(Input((1,28,28)))
 nn.add(Conv2D(16,(3,3)))
 nn.add(Relu())
