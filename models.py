@@ -6,7 +6,7 @@ from optimizers import Adam
 
 
 
-class NN():
+class Sequential():
     def __init__(self):
         self.layers = []
     def accuracy(self,p,y):
