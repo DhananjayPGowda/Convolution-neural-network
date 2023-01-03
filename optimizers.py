@@ -1,15 +1,15 @@
-
-
-
 import numpy as np
 
 class SGD():
     def __init__(self,lr = 0.001):
         self.lr = lr
+        
+        
     def update(self,W,B,dw,db):
         W -= dw * self.lr
         B-= db *self.lr
 
+        
 class Adam():
     def __init__(self,lr = 0.001,b1 = 0.9,b2 = 0.9999,sigma = 10e-8):
         self.lr = lr
@@ -20,6 +20,8 @@ class Adam():
         self.mw = 0
         self.vw = 0
         self.sigma = sigma
+        
+        
     def update(self,W,B,dw,db):
         self.mw = (self.b1*self.mw) + (1-self.b1)*dw
         self.vw = (self.b2*self.vw) + (1-self.b2)*(dw**2)
