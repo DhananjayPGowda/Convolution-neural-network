@@ -1,6 +1,5 @@
     
 import numpy as np
-#np.random.seed(1)
 from time import time
 from activations import *
 from layers import *
