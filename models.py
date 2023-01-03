@@ -4,8 +4,6 @@ from time import time
 from optimizers import Adam
 
 
-
-
 class Sequential():
     def __init__(self):
         self.layers = []
