@@ -1,6 +1,5 @@
     
 import numpy as np
-from time import time
 from activations import *
 from layers import *
 from optimizers import *
